@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+// All refactorings in NormalLonelyTweet except for the @string change in main.xml
+
 public class LonelyTwitterActivity extends Activity {
 
 	private EditText bodyText;

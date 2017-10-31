@@ -12,6 +12,8 @@ import java.util.List;
 import android.content.Context;
 import android.util.Log;
 
+// All refactorings in NormalLonelyTweet except for the @string change in main.xml
+
 public class TweetsFileManager {
 
 	private Context ctx;
@@ -29,6 +31,7 @@ public class TweetsFileManager {
 			ObjectInputStream ois = new ObjectInputStream(fis);
 
 			Object o = ois.readObject();
+
 
 			if (o instanceof ArrayList) {
 				tweets = (ArrayList<NormalLonelyTweet>) o;

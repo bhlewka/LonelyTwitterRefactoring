@@ -4,14 +4,18 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
 
+// All refactorings in NormalLonelyTweet except for the @string change in main.xml
+
 public class NormalLonelyTweet implements Serializable {
 
+	// Made date and string private
 	private static final long serialVersionUID = 1L;
-	protected Date tweetDate;
-	protected String tweetBody;
+	private Date tweetDate;
+	private String tweetBody;
 
-	public NormalLonelyTweet() {
-	}
+	// Removed unused (and ineffective constructor)
+//	public NormalLonelyTweet() {
+//}
 
 	public NormalLonelyTweet(String text, Date date) {
 		this.tweetDate = date;
@@ -45,13 +49,11 @@ public class NormalLonelyTweet implements Serializable {
 		tweetBody = (String) in.readObject();
 	}
 
+	// Simplified if statement
 	public boolean isValid() {
-		if (tweetBody.trim().length() == 0
-				|| tweetBody.trim().length() > 10) {
-			return false;
-		}
+		return !(tweetBody.trim().length() == 0
+				|| tweetBody.trim().length() > 10);
 
-		return true;
 	}
 
 	@Override
